@@ -48,8 +48,6 @@ function searchHandler(req,res){
     .catch((err)=>{
       res.send(err);
     });
-
-
 }
 
 
