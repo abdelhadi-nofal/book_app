@@ -1,5 +1,8 @@
-body{
+*{
     box-sizing: border-box;
-    background-color: rgb(85, 85, 85);
+    
 }
 
+body{
+    background-color: rgb(149, 204, 48);
+}
