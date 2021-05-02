@@ -24,6 +24,10 @@ server.get('/hello',(req,res)=>{
   res.render('./pages/index.ejs');
 });
 
+server.get('/searches/new',(req,res)=>{
+  res.render('./pages/searches/new.ejs');
+});
+
 server.listen(PORT , ()=>{
   console.log(`listening on PORT ${PORT}`);
 });
