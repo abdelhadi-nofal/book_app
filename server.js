@@ -43,18 +43,21 @@ function searchHandler(req,res){
     .then(bookData => {
       console.log(bookData);
       let bookArr = bookData.body.items.map(value => new Book(value));
-      res.send(bookArr);
       res.render('./pages/searches/show.ejs', { books: bookArr });
+    })
+    .catch((err)=>{
+      res.send(err);
     });
+
 
 }
 
 
 function Book(data) {
   this.title = data.volumeInfo.title;
-  this.authors = data.volumeInfo.authors;
-  this.description = data.volumeInfo.description;
-  this.img = data.volumeInfo.imageLinks.thumbnail;
+  this.authors = data.volumeInfo.authors || `Author name is missing`;
+  this.description = data.volumeInfo.description || `There is No description`;
+  this.img = data.volumeInfo.imageLinks.thumbnail || `https://i.imgur.com/J5LVHEL.jpg`;
 }
 
 server.listen(PORT , ()=>{
