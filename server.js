@@ -36,12 +36,13 @@ server.post('/books', addBookHandler);
 
 server.post('/searches',searchHandler);
 server.put('/updateBook/:bookID',updateBookHandler);
+server.delete('/deleteBook/:bookID',deleteBookHandler);
 
 function homeHandler(req,res){
   let SQL = `SELECT * FROM booktable;`;
   client.query(SQL)
     .then(results=>{
-      console.log(results.rows[0].img);
+      // console.log(results.rows[0].img);
       res.render('pages/index',{booksResults:results.rows});
     })
     .catch((err)=>{
@@ -61,6 +62,7 @@ function bookDetails(req, res) {
       res.send(err);
     });
 }
+
 
 
 function searchHandler(req,res){
@@ -105,6 +107,17 @@ function updateBookHandler(req,res){
     .then(()=>{
       res.redirect(`/books/${req.params.bookID}`);
     });
+}
+
+
+function deleteBookHandler(req,res){
+  // console.log('Hi');
+  let SQL=`DELETE FROM booktable WHERE id=$1;`;
+  let value=[req.params.bookID];
+  client.query(SQL,value)
+  .then(()=>{
+    res.redirect('/');
+  })
 }
 
 server.get('*', (req, res) => {
