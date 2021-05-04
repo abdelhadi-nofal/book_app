@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="book">
+            <img src=<%= book.img %> alt="">
+            <h4>Title: <%= book.title %></h2>
+            <h5>Author: <%= book.author %></h3>
+            <p>Description: <%= book.description %></p>
+
+        </div>
+
+        <button id="updateBtn">Update</button>
+        <section id="updateForm">
+          <form action="/updatebook/<%=book.bookID%>?_method=PUT" method="POST">
+            <input type="text" name="title" value="<%=book.title%>"><br>
+            <input type="text" name="author" value="<%=book.author %>"><br>
+            <textarea name="description" cols="30" rows="10"><%=book.description %></textarea><br>
+            <button type="submit">update Book Detail</button>
+          </form>
+
+
+
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="../js/app.js"></script>
+</body>
+</html>
