@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
-    <div class="book">
+    <%- include('../layout/header') %>
+
+    <h1 style="color: white;">SEARCH RESULTS</h1>
+    <section><div class="book">
         <img src=<%= book.img %> alt="">
         <h4>Title: <%= book.title %></h2>
         <h5>Author: <%= book.author %></h5>
@@ -16,7 +19,8 @@
 
 
 
-    </div>
+    </div></section>
+    
 <% }) %>
 
 </body>

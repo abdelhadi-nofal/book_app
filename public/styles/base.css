@@ -4,5 +4,32 @@
 }
 
 body{
-    background-color: rgb(149, 204, 48);
+    background-color: rgb(31, 31, 31);
+    margin: 0;
 }
+
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    
+}
+
+section{
+    
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-content: center;
+    justify-content: center;
+    margin-left: 300px;
+    margin-bottom: 30px;
+}
+
+button{
+    height: 50px;
+    width: 150px;
+    margin-left: 570px;
+    margin-bottom: 30px;
+}
+
+

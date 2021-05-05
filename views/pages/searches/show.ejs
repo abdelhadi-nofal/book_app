@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Document</title>
+    
 </head>
 <body>
-    <h1>Searched Books</h1>
+    <%- include('../layout/header') %>
+    <h1 style="color: white;">Searched Books</h1>
     <% books.forEach(book=>{ %>
-        <div class="book">
-            <img src=<%= book.img %> alt="">
-            <h4>Title: <%= book.title %></h2>
-            <h5>Author: <%= book.authors %></h5>
-            <p>Description: <%= book.description %></p>
+       
+       <section><div class="book">
+        <img src=<%= book.img %> alt="">
+        <h4>Title: <%= book.title %></h2>
+        <h5>Author: <%= book.authors %></h5>
+        <p>Description: <%= book.description %></p>
 
-            <form action='/books' method="POST">
-                <input name="title" value="<%= book.title %>"  hidden>
-                <input name="author" value="<%= book.authors %>"  hidden>
-                <input name="description" value="<%= book.description %>"  hidden>
-                <input name="img" value="<%= book.img %>"  hidden>
-                <button type="submit">Select This Book</button>
-            </form>
+        <form action='/books' method="POST">
+            <input name="title" value="<%= book.title %>"  hidden>
+            <input name="author" value="<%= book.authors %>"  hidden>
+            <input name="description" value="<%= book.description %>"  hidden>
+            <input name="img" value="<%= book.img %>"  hidden>
+            <button type="submit">Select This Book</button>
+        </form>
 
 
-    
-        </div>
+
+    </div></section> 
     <% }) %>
 
     
