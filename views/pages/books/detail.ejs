@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    
-        <div class="book">
-            <img src=<%= book.img %> alt="">
-            <h4>Title: <%= book.title %></h2>
-            <h5>Author: <%= book.author %></h3>
-            <p>Description: <%= book.description %></p>
+  <%- include('../layout/header') %>
 
-        </div>
+  <h1 style="color: white;">BOOK DETAIL</h1>
+    <section>
+      <div class="book">
+        <img src=<%= book.img %> alt="">
+        <h4>Title: <%= book.title %></h2>
+        <h5>Author: <%= book.author %></h3>
+        <p>Description: <%= book.description %></p>
 
+    </div>
+
+    </section>
+        
 
         <form action="/deleteBook/<%=book.id%>?_method=delete"  method="POST">
             <button>Delete Book</button>
